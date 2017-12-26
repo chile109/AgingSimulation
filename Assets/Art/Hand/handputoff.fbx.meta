@@ -1,0 +1,127 @@
+fileFormatVersion: 2
+guid: 30eb14a8fcf227946b850c45a4cf06d7
+timeCreated: 1497842111
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: hand2:polySurface33
+    100002: //RootNode
+    100004: Userhand_RightForeArm
+    100006: Userhand_RightHand
+    100008: Userhand_RightHandIndex1
+    100010: Userhand_RightHandIndex2
+    100012: Userhand_RightHandIndex3
+    100014: Userhand_RightHandIndex4
+    100016: Userhand_RightHandMiddle1
+    100018: Userhand_RightHandMiddle2
+    100020: Userhand_RightHandMiddle3
+    100022: Userhand_RightHandMiddle4
+    100024: Userhand_RightHandPinky1
+    100026: Userhand_RightHandPinky2
+    100028: Userhand_RightHandPinky3
+    100030: Userhand_RightHandPinky4
+    100032: Userhand_RightHandRing1
+    100034: Userhand_RightHandRing2
+    100036: Userhand_RightHandRing3
+    100038: Userhand_RightHandRing4
+    100040: Userhand_RightHandThumb1
+    100042: Userhand_RightHandThumb2
+    100044: Userhand_RightHandThumb3
+    100046: Userhand_RightHandThumb4
+    400000: hand2:polySurface33
+    400002: //RootNode
+    400004: Userhand_RightForeArm
+    400006: Userhand_RightHand
+    400008: Userhand_RightHandIndex1
+    400010: Userhand_RightHandIndex2
+    400012: Userhand_RightHandIndex3
+    400014: Userhand_RightHandIndex4
+    400016: Userhand_RightHandMiddle1
+    400018: Userhand_RightHandMiddle2
+    400020: Userhand_RightHandMiddle3
+    400022: Userhand_RightHandMiddle4
+    400024: Userhand_RightHandPinky1
+    400026: Userhand_RightHandPinky2
+    400028: Userhand_RightHandPinky3
+    400030: Userhand_RightHandPinky4
+    400032: Userhand_RightHandRing1
+    400034: Userhand_RightHandRing2
+    400036: Userhand_RightHandRing3
+    400038: Userhand_RightHandRing4
+    400040: Userhand_RightHandThumb1
+    400042: Userhand_RightHandThumb2
+    400044: Userhand_RightHandThumb3
+    400046: Userhand_RightHandThumb4
+    4300000: hand2:polySurface33
+    7400000: handputoff
+    9500000: //RootNode
+    13700000: hand2:polySurface33
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
