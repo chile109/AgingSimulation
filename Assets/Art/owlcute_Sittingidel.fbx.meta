@@ -1,0 +1,203 @@
+fileFormatVersion: 2
+guid: 50b910ef16e580041a31e473420553af
+timeCreated: 1497939817
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: ewq:Character1_Head
+    100002: ewq:Character1_Hips
+    100004: ewq:Character1_LeftArm
+    100006: ewq:Character1_LeftArm1
+    100008: ewq:Character1_LeftFoot
+    100010: ewq:Character1_LeftForeArm
+    100012: ewq:Character1_LeftForeArm1
+    100014: ewq:Character1_LeftHand
+    100016: ewq:Character1_LeftHand1
+    100018: ewq:Character1_LeftHandIndex1
+    100020: ewq:Character1_LeftHandIndex2
+    100022: ewq:Character1_LeftHandIndex3
+    100024: ewq:Character1_LeftHandIndex5
+    100026: ewq:Character1_LeftHandIndex6
+    100028: ewq:Character1_LeftHandIndex7
+    100030: ewq:Character1_LeftHandMiddle1
+    100032: ewq:Character1_LeftHandMiddle2
+    100034: ewq:Character1_LeftHandMiddle3
+    100036: ewq:Character1_LeftHandMiddle5
+    100038: ewq:Character1_LeftHandMiddle6
+    100040: ewq:Character1_LeftHandMiddle7
+    100042: ewq:Character1_LeftHandPinky1
+    100044: ewq:Character1_LeftHandPinky2
+    100046: ewq:Character1_LeftHandPinky3
+    100048: ewq:Character1_LeftHandPinky5
+    100050: ewq:Character1_LeftHandPinky6
+    100052: ewq:Character1_LeftHandPinky7
+    100054: ewq:Character1_LeftHandRing1
+    100056: ewq:Character1_LeftHandRing2
+    100058: ewq:Character1_LeftHandRing3
+    100060: ewq:Character1_LeftHandRing5
+    100062: ewq:Character1_LeftHandRing6
+    100064: ewq:Character1_LeftHandRing7
+    100066: ewq:Character1_LeftHandThumb1
+    100068: ewq:Character1_LeftHandThumb2
+    100070: ewq:Character1_LeftHandThumb3
+    100072: ewq:Character1_LeftHandThumb5
+    100074: ewq:Character1_LeftHandThumb6
+    100076: ewq:Character1_LeftHandThumb7
+    100078: ewq:Character1_LeftLeg
+    100080: ewq:Character1_LeftShoulder
+    100082: ewq:Character1_LeftShoulder1
+    100084: ewq:Character1_LeftUpLeg
+    100086: ewq:Character1_Neck
+    100088: ewq:Character1_Reference
+    100090: ewq:Character1_RightFoot
+    100092: ewq:Character1_RightLeg
+    100094: ewq:Character1_RightUpLeg
+    100096: ewq:Character1_Spine
+    100098: ewq:Character1_Spine1
+    100100: ewq:Character1_Spine2
+    100102: ewq:joint1
+    100104: ewq:joint11
+    100106: ewq:joint13
+    100108: ewq:joint2
+    100110: ewq:joint3
+    100112: ewq:joint4
+    100114: ewq:joint6
+    100116: ewq:joint8
+    100118: ewq:joint9
+    100120: //RootNode
+    100122: polySurface4
+    400000: ewq:Character1_Head
+    400002: ewq:Character1_Hips
+    400004: ewq:Character1_LeftArm
+    400006: ewq:Character1_LeftArm1
+    400008: ewq:Character1_LeftFoot
+    400010: ewq:Character1_LeftForeArm
+    400012: ewq:Character1_LeftForeArm1
+    400014: ewq:Character1_LeftHand
+    400016: ewq:Character1_LeftHand1
+    400018: ewq:Character1_LeftHandIndex1
+    400020: ewq:Character1_LeftHandIndex2
+    400022: ewq:Character1_LeftHandIndex3
+    400024: ewq:Character1_LeftHandIndex5
+    400026: ewq:Character1_LeftHandIndex6
+    400028: ewq:Character1_LeftHandIndex7
+    400030: ewq:Character1_LeftHandMiddle1
+    400032: ewq:Character1_LeftHandMiddle2
+    400034: ewq:Character1_LeftHandMiddle3
+    400036: ewq:Character1_LeftHandMiddle5
+    400038: ewq:Character1_LeftHandMiddle6
+    400040: ewq:Character1_LeftHandMiddle7
+    400042: ewq:Character1_LeftHandPinky1
+    400044: ewq:Character1_LeftHandPinky2
+    400046: ewq:Character1_LeftHandPinky3
+    400048: ewq:Character1_LeftHandPinky5
+    400050: ewq:Character1_LeftHandPinky6
+    400052: ewq:Character1_LeftHandPinky7
+    400054: ewq:Character1_LeftHandRing1
+    400056: ewq:Character1_LeftHandRing2
+    400058: ewq:Character1_LeftHandRing3
+    400060: ewq:Character1_LeftHandRing5
+    400062: ewq:Character1_LeftHandRing6
+    400064: ewq:Character1_LeftHandRing7
+    400066: ewq:Character1_LeftHandThumb1
+    400068: ewq:Character1_LeftHandThumb2
+    400070: ewq:Character1_LeftHandThumb3
+    400072: ewq:Character1_LeftHandThumb5
+    400074: ewq:Character1_LeftHandThumb6
+    400076: ewq:Character1_LeftHandThumb7
+    400078: ewq:Character1_LeftLeg
+    400080: ewq:Character1_LeftShoulder
+    400082: ewq:Character1_LeftShoulder1
+    400084: ewq:Character1_LeftUpLeg
+    400086: ewq:Character1_Neck
+    400088: ewq:Character1_Reference
+    400090: ewq:Character1_RightFoot
+    400092: ewq:Character1_RightLeg
+    400094: ewq:Character1_RightUpLeg
+    400096: ewq:Character1_Spine
+    400098: ewq:Character1_Spine1
+    400100: ewq:Character1_Spine2
+    400102: ewq:joint1
+    400104: ewq:joint11
+    400106: ewq:joint13
+    400108: ewq:joint2
+    400110: ewq:joint3
+    400112: ewq:joint4
+    400114: ewq:joint6
+    400116: ewq:joint8
+    400118: ewq:joint9
+    400120: //RootNode
+    400122: polySurface4
+    4300000: polySurface4
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: polySurface4
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
