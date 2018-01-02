@@ -153,7 +153,159 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 240
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ewq:Character1_Reference
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_LeftUpLeg
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_LeftUpLeg/ewq:Character1_LeftLeg
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_LeftUpLeg/ewq:Character1_LeftLeg/ewq:Character1_LeftFoot
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_RightUpLeg
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_RightUpLeg/ewq:Character1_RightLeg
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_RightUpLeg/ewq:Character1_RightLeg/ewq:Character1_RightFoot
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder/ewq:Character1_LeftArm
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder/ewq:Character1_LeftArm/ewq:Character1_LeftForeArm
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder/ewq:Character1_LeftArm/ewq:Character1_LeftForeArm/ewq:Character1_LeftHand
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder/ewq:Character1_LeftArm/ewq:Character1_LeftForeArm/ewq:Character1_LeftHand/ewq:Character1_LeftHandIndex1
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder/ewq:Character1_LeftArm/ewq:Character1_LeftForeArm/ewq:Character1_LeftHand/ewq:Character1_LeftHandIndex1/ewq:Character1_LeftHandIndex2
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder/ewq:Character1_LeftArm/ewq:Character1_LeftForeArm/ewq:Character1_LeftHand/ewq:Character1_LeftHandIndex1/ewq:Character1_LeftHandIndex2/ewq:Character1_LeftHandIndex3
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder/ewq:Character1_LeftArm/ewq:Character1_LeftForeArm/ewq:Character1_LeftHand/ewq:Character1_LeftHandMiddle1
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder/ewq:Character1_LeftArm/ewq:Character1_LeftForeArm/ewq:Character1_LeftHand/ewq:Character1_LeftHandMiddle1/ewq:Character1_LeftHandMiddle2
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder/ewq:Character1_LeftArm/ewq:Character1_LeftForeArm/ewq:Character1_LeftHand/ewq:Character1_LeftHandMiddle1/ewq:Character1_LeftHandMiddle2/ewq:Character1_LeftHandMiddle3
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder/ewq:Character1_LeftArm/ewq:Character1_LeftForeArm/ewq:Character1_LeftHand/ewq:Character1_LeftHandPinky1
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder/ewq:Character1_LeftArm/ewq:Character1_LeftForeArm/ewq:Character1_LeftHand/ewq:Character1_LeftHandPinky1/ewq:Character1_LeftHandPinky2
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder/ewq:Character1_LeftArm/ewq:Character1_LeftForeArm/ewq:Character1_LeftHand/ewq:Character1_LeftHandPinky1/ewq:Character1_LeftHandPinky2/ewq:Character1_LeftHandPinky3
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder/ewq:Character1_LeftArm/ewq:Character1_LeftForeArm/ewq:Character1_LeftHand/ewq:Character1_LeftHandRing1
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder/ewq:Character1_LeftArm/ewq:Character1_LeftForeArm/ewq:Character1_LeftHand/ewq:Character1_LeftHandRing1/ewq:Character1_LeftHandRing2
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder/ewq:Character1_LeftArm/ewq:Character1_LeftForeArm/ewq:Character1_LeftHand/ewq:Character1_LeftHandRing1/ewq:Character1_LeftHandRing2/ewq:Character1_LeftHandRing3
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder/ewq:Character1_LeftArm/ewq:Character1_LeftForeArm/ewq:Character1_LeftHand/ewq:Character1_LeftHandThumb1
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder/ewq:Character1_LeftArm/ewq:Character1_LeftForeArm/ewq:Character1_LeftHand/ewq:Character1_LeftHandThumb1/ewq:Character1_LeftHandThumb2
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder/ewq:Character1_LeftArm/ewq:Character1_LeftForeArm/ewq:Character1_LeftHand/ewq:Character1_LeftHandThumb1/ewq:Character1_LeftHandThumb2/ewq:Character1_LeftHandThumb3
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder/ewq:Character1_LeftArm/ewq:Character1_LeftForeArm/ewq:joint4
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder/ewq:Character1_LeftArm/ewq:joint6
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder1
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder1/ewq:Character1_LeftArm1
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder1/ewq:Character1_LeftArm1/ewq:Character1_LeftForeArm1
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder1/ewq:Character1_LeftArm1/ewq:Character1_LeftForeArm1/ewq:Character1_LeftHand1
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder1/ewq:Character1_LeftArm1/ewq:Character1_LeftForeArm1/ewq:Character1_LeftHand1/ewq:Character1_LeftHandIndex5
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder1/ewq:Character1_LeftArm1/ewq:Character1_LeftForeArm1/ewq:Character1_LeftHand1/ewq:Character1_LeftHandIndex5/ewq:Character1_LeftHandIndex6
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder1/ewq:Character1_LeftArm1/ewq:Character1_LeftForeArm1/ewq:Character1_LeftHand1/ewq:Character1_LeftHandIndex5/ewq:Character1_LeftHandIndex6/ewq:Character1_LeftHandIndex7
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder1/ewq:Character1_LeftArm1/ewq:Character1_LeftForeArm1/ewq:Character1_LeftHand1/ewq:Character1_LeftHandMiddle5
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder1/ewq:Character1_LeftArm1/ewq:Character1_LeftForeArm1/ewq:Character1_LeftHand1/ewq:Character1_LeftHandMiddle5/ewq:Character1_LeftHandMiddle6
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder1/ewq:Character1_LeftArm1/ewq:Character1_LeftForeArm1/ewq:Character1_LeftHand1/ewq:Character1_LeftHandMiddle5/ewq:Character1_LeftHandMiddle6/ewq:Character1_LeftHandMiddle7
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder1/ewq:Character1_LeftArm1/ewq:Character1_LeftForeArm1/ewq:Character1_LeftHand1/ewq:Character1_LeftHandPinky5
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder1/ewq:Character1_LeftArm1/ewq:Character1_LeftForeArm1/ewq:Character1_LeftHand1/ewq:Character1_LeftHandPinky5/ewq:Character1_LeftHandPinky6
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder1/ewq:Character1_LeftArm1/ewq:Character1_LeftForeArm1/ewq:Character1_LeftHand1/ewq:Character1_LeftHandPinky5/ewq:Character1_LeftHandPinky6/ewq:Character1_LeftHandPinky7
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder1/ewq:Character1_LeftArm1/ewq:Character1_LeftForeArm1/ewq:Character1_LeftHand1/ewq:Character1_LeftHandRing5
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder1/ewq:Character1_LeftArm1/ewq:Character1_LeftForeArm1/ewq:Character1_LeftHand1/ewq:Character1_LeftHandRing5/ewq:Character1_LeftHandRing6
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder1/ewq:Character1_LeftArm1/ewq:Character1_LeftForeArm1/ewq:Character1_LeftHand1/ewq:Character1_LeftHandRing5/ewq:Character1_LeftHandRing6/ewq:Character1_LeftHandRing7
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder1/ewq:Character1_LeftArm1/ewq:Character1_LeftForeArm1/ewq:Character1_LeftHand1/ewq:Character1_LeftHandThumb5
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder1/ewq:Character1_LeftArm1/ewq:Character1_LeftForeArm1/ewq:Character1_LeftHand1/ewq:Character1_LeftHandThumb5/ewq:Character1_LeftHandThumb6
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder1/ewq:Character1_LeftArm1/ewq:Character1_LeftForeArm1/ewq:Character1_LeftHand1/ewq:Character1_LeftHandThumb5/ewq:Character1_LeftHandThumb6/ewq:Character1_LeftHandThumb7
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder1/ewq:Character1_LeftArm1/ewq:Character1_LeftForeArm1/ewq:joint11
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_LeftShoulder1/ewq:Character1_LeftArm1/ewq:joint13
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_Neck
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_Neck/ewq:Character1_Head
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_Neck/ewq:Character1_Head/ewq:joint1
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_Neck/ewq:Character1_Head/ewq:joint1/ewq:joint2
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:Character1_Spine/ewq:Character1_Spine1/ewq:Character1_Spine2/ewq:Character1_Neck/ewq:Character1_Head/ewq:joint1/ewq:joint3
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:joint8
+        weight: 1
+      - path: ewq:Character1_Reference/ewq:Character1_Hips/ewq:joint8/ewq:joint9
+        weight: 1
+      - path: polySurface4
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
