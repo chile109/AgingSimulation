@@ -16,7 +16,10 @@ public class BossController : MonoBehaviour
     {
         Hp = 100;
         NowState = BossState.Idle;
+    }
 
+    public void StartFight()
+    {
         coroutine = BeAngry(5f);
         StartCoroutine(coroutine);
     }

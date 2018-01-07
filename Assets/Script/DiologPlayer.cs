@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class DiologPlayer : MonoBehaviour {
-
+    public BossController _boss;
     public Text Owlsaying;
     public SteamVR_TrackedObject trackedObj;
     public string[] Dialog;
+   
     private int id;
 
     void Start () {
@@ -27,7 +28,10 @@ public class DiologPlayer : MonoBehaviour {
             }
 
             else
+            {
                 Owlsaying.text = "Start";
+                _boss.StartFight();
+            }
         }
     }
 }
