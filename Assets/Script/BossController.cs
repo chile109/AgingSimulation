@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossController : MonoBehaviour
 {
-
+    public Image Hpbar;
     public int Hp;
     BossState NowState;
 
@@ -25,13 +26,20 @@ public class BossController : MonoBehaviour
         if (other.tag == "Weapon" && NowState == BossState.Angry)
         {
             Hp -= 10;
+            Hpbar.fillAmount = (float)Hp / 100;
             Debug.Log("HP:" + Hp);
             NowState = BossState.Injured;
 
             Debug.Log("Boss Injured");
             StopAllCoroutines();
-            coroutine = BeIdle(3f);
-            StartCoroutine(coroutine); ;
+
+            if (Hp > 0)
+            {
+                coroutine = BeIdle(3f);
+                StartCoroutine(coroutine);
+            }
+            else
+                IsDead();
         }
     }
 
@@ -71,6 +79,11 @@ public class BossController : MonoBehaviour
 
         coroutine = BeAngry(5f);
         StartCoroutine(coroutine);
+    }
+
+    private void IsDead()
+    {
+        Debug.Log("Boss is dead!");
     }
 }
 
