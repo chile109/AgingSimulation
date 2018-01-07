@@ -51,7 +51,15 @@ public class BossController : MonoBehaviour
         NowState = BossState.Attack;
         Debug.Log("Boss Attack");
 
-        coroutine = BeIdle(3f);
+        HeroManager.BeHit();
+        if (HeroManager.HP == 0)
+        {
+            StopAllCoroutines();
+            coroutine = BeIdle(0f);
+        }
+        else
+            coroutine = BeIdle(3f);
+
         StartCoroutine(coroutine);
     }
 
@@ -66,7 +74,7 @@ public class BossController : MonoBehaviour
     }
 }
 
-    public enum BossState
+public enum BossState
 {
     Idle,
     Angry,
