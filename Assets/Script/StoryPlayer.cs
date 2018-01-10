@@ -7,44 +7,62 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Text))]
 public class StoryPlayer : MonoBehaviour
 {
+    public Text _Lang;
 
-    public string FileName;
-    public  Text _Lang;
-
-    private Object[] pages;
+    public Object[] pages;
     private Image _player;
     private int id;
 
     public SteamVR_TrackedObject trackedObj;
+    public GameObject HeroCamera;
+    public GameObject HeroUI;
+
+    public DiologPlayer Owl;
 
     private void Awake()
     {
-        pages = Resources.LoadAll("Openning", typeof(Sprite));
+        Owl.enabled = false;
+        HeroCamera.SetActive(false);
+        pages = Resources.LoadAll("StoryBoard/Third/Sequence", typeof(Sprite));
+        StoryInit();
     }
 
-    void Start()
+    public void GetStory(string Name)
     {
+        pages = Resources.LoadAll(Name, typeof(Sprite));
+        StoryInit();
+    }
 
+    void StoryInit()
+    {
+        HeroUI.SetActive(false);
         _player = this.GetComponent<Image>();
-
         id = 0;
-
-        _player.sprite = (Sprite)pages[0];
+        _player.sprite = (Sprite)pages[id];
+        _Lang.text = KernelData.Sequence3[id];
     }
 
-    void FixedUpdate()
+    void Update()
     {
+        Debug.Log(id);
         var device = SteamVR_Controller.Input((int)trackedObj.index);
-        if (device.GetTouchDown(SteamVR_Controller.ButtonMask.Trigger))
+        if (device.GetTouchUp(SteamVR_Controller.ButtonMask.Trigger))
         {
             if (id < pages.Length - 1)
             {
                 id += 1;
                 _player.sprite = (Sprite)pages[id];
+                _Lang.text = KernelData.Sequence3[id];
             }
 
             else
+            {
                 _Lang.text = "End";
+                HeroUI.SetActive(true);
+                HeroCamera.SetActive(true);
+                this.gameObject.SetActive(false);
+                Owl.enabled = true;
+            }
         }
     }
 
