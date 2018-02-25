@@ -44,7 +44,7 @@ public class StoryPlayer : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(id);
+
         var device = SteamVR_Controller.Input((int)trackedObj.index);
         if (device.GetTouchUp(SteamVR_Controller.ButtonMask.Trigger))
         {

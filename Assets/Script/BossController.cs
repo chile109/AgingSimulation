@@ -5,23 +5,28 @@ using UnityEngine.UI;
 
 public class BossController : MonoBehaviour
 {
+    Animator _Ani;
     public Image Hpbar;
     public int Hp;
-    BossState NowState;
+    public BossState NowState;
 
-    private IEnumerator coroutine;
+    private IEnumerator NowCoroutine;
 
     // Use this for initialization
     void Start()
     {
+        _Ani = this.GetComponent<Animator>();
         Hp = 100;
         NowState = BossState.Idle;
     }
 
     public void StartFight()
     {
-        coroutine = BeAngry(5f);
-        StartCoroutine(coroutine);
+        NowCoroutine = BeAngry(5f);
+        StartCoroutine(NowCoroutine);
+        Debug.Log("SatrtFight");
+
+        this.transform.position = new Vector3(-10, 0.3f, 0);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -31,15 +36,16 @@ public class BossController : MonoBehaviour
             Hp -= 10;
             Hpbar.fillAmount = (float)Hp / 100;
             Debug.Log("HP:" + Hp);
-            NowState = BossState.Injured;
 
-            Debug.Log("Boss Injured");
+            NowState = BossState.Injured;
+            _Ani.SetTrigger("BeInjured");
+
             StopAllCoroutines();
 
             if (Hp > 0)
             {
-                coroutine = BeIdle(3f);
-                StartCoroutine(coroutine);
+                NowCoroutine = BeIdle(3f);
+                StartCoroutine(NowCoroutine);
             }
             else
                 IsDead();
@@ -50,42 +56,43 @@ public class BossController : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         NowState = BossState.Angry;
-        Debug.Log("Boss Angry");
-
-        coroutine = Attack(5f);
-        StartCoroutine(coroutine);
+        _Ani.SetTrigger("BeAngry");
+        Debug.Log("Angry");
+        NowCoroutine = Attack(5f);
+        StartCoroutine(NowCoroutine);
     }
 
     private IEnumerator Attack(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
         NowState = BossState.Attack;
-        Debug.Log("Boss Attack");
+        _Ani.SetTrigger("BeAttack");
 
         HeroManager.BeHit();
         if (HeroManager.HP == 0)
         {
             StopAllCoroutines();
-            coroutine = BeIdle(0f);
+            NowCoroutine = BeIdle(0f);
         }
         else
-            coroutine = BeIdle(3f);
+            NowCoroutine = BeIdle(3f);
 
-        StartCoroutine(coroutine);
+        StartCoroutine(NowCoroutine);
     }
 
     private IEnumerator BeIdle(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
         NowState = BossState.Idle;
-        Debug.Log("Boss Idle");
+        _Ani.SetTrigger("BeIdle");
 
-        coroutine = BeAngry(5f);
-        StartCoroutine(coroutine);
+        NowCoroutine = BeAngry(5f);
+        StartCoroutine(NowCoroutine);
     }
 
     private void IsDead()
     {
+        _Ani.SetTrigger("BeDead");
         Debug.Log("Boss is dead!");
     }
 }

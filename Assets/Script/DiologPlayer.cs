@@ -30,6 +30,7 @@ public class DiologPlayer : MonoBehaviour {
             else
             {
                 Owlsaying.text = "Start";
+                this.gameObject.SetActive(false);
                 _boss.StartFight();
             }
         }
