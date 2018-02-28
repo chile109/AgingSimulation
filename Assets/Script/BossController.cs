@@ -33,6 +33,7 @@ public class BossController : MonoBehaviour
     {
         if (other.tag == "Weapon" && NowState == BossState.Angry)
         {
+            StopAllCoroutines();
             Hp -= 10;
             Hpbar.fillAmount = (float)Hp / 100;
             Debug.Log("HP:" + Hp);
@@ -68,7 +69,9 @@ public class BossController : MonoBehaviour
         NowState = BossState.Attack;
         _Ani.SetTrigger("BeAttack");
 
-        HeroManager.BeHit();
+        Debug.Log("attack");
+        StartCoroutine(Damage());
+
         if (HeroManager.HP == 0)
         {
             StopAllCoroutines();
@@ -94,6 +97,12 @@ public class BossController : MonoBehaviour
     {
         _Ani.SetTrigger("BeDead");
         Debug.Log("Boss is dead!");
+    }
+
+    private IEnumerator Damage()
+    {
+        yield return new WaitForSeconds(1f);
+        HeroManager.BeHit();
     }
 }
 
