@@ -9,6 +9,8 @@ public class BossController : MonoBehaviour
     public Image Hpbar;
     public int Hp;
     public BossState NowState;
+    public SkinnedMeshRenderer render;
+    public Transform _Hero;
 
     private IEnumerator NowCoroutine;
 
@@ -26,7 +28,9 @@ public class BossController : MonoBehaviour
         StartCoroutine(NowCoroutine);
         Debug.Log("SatrtFight");
 
-        this.transform.position = new Vector3(-10, 0.3f, 0);
+        gameObject.transform.position = Radius_Position();
+        gameObject.transform.LookAt(new Vector3(_Hero.position.x, 0, _Hero.position.z));
+        transform.Rotate(Vector3.up, -10f, Space.World);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -45,7 +49,7 @@ public class BossController : MonoBehaviour
 
             if (Hp > 0)
             {
-                NowCoroutine = BeIdle(3f);
+                NowCoroutine = BeIdle(2f);
                 StartCoroutine(NowCoroutine);
             }
             else
@@ -58,7 +62,7 @@ public class BossController : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         NowState = BossState.Angry;
         _Ani.SetTrigger("BeAngry");
-        Debug.Log("Angry");
+
         NowCoroutine = Attack(5f);
         StartCoroutine(NowCoroutine);
     }
@@ -69,7 +73,6 @@ public class BossController : MonoBehaviour
         NowState = BossState.Attack;
         _Ani.SetTrigger("BeAttack");
 
-        Debug.Log("attack");
         StartCoroutine(Damage());
 
         if (HeroManager.HP == 0)
@@ -78,7 +81,7 @@ public class BossController : MonoBehaviour
             NowCoroutine = BeIdle(0f);
         }
         else
-            NowCoroutine = BeIdle(3f);
+            NowCoroutine = BeIdle(1f);
 
         StartCoroutine(NowCoroutine);
     }
@@ -88,7 +91,14 @@ public class BossController : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         NowState = BossState.Idle;
         _Ani.SetTrigger("BeIdle");
+        render.enabled = false;
 
+        yield return new WaitForSeconds(1f);
+
+        gameObject.transform.position = Radius_Position();
+        gameObject.transform.LookAt(new Vector3(_Hero.position.x, 0, _Hero.position.z));
+        transform.Rotate(Vector3.up, -5f, Space.World);
+        render.enabled = true;
         NowCoroutine = BeAngry(5f);
         StartCoroutine(NowCoroutine);
     }
@@ -103,6 +113,18 @@ public class BossController : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         HeroManager.BeHit();
+    }
+
+    private Vector3 Radius_Position()
+    {
+        int _radius = 7;
+        var degrees = Random.Range(0, 360);
+
+        var x = _radius * Mathf.Cos(degrees * Mathf.Deg2Rad);
+        var y = _radius * Mathf.Sin(degrees * Mathf.Deg2Rad);
+
+        Debug.Log(new Vector3(x, 0, y));
+        return new Vector3(x, 0, y);
     }
 }
 
