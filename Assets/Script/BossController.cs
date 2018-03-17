@@ -8,6 +8,7 @@ public class BossController : MonoBehaviour
     Animator _Ani;
     public Image Hpbar;
     public int Hp;
+    public bool Die = false;
     public BossState NowState;
     public SkinnedMeshRenderer render;
     public Transform _Hero;
@@ -75,7 +76,7 @@ public class BossController : MonoBehaviour
 
         StartCoroutine(Damage());
 
-        if (HeroManager.HP == 0)
+        if (HeroManager._instant.HP == 0)
         {
             StopAllCoroutines();
             NowCoroutine = BeIdle(0f);
@@ -106,13 +107,14 @@ public class BossController : MonoBehaviour
     private void IsDead()
     {
         _Ani.SetTrigger("BeDead");
+        Die = true;
         Debug.Log("Boss is dead!");
     }
 
     private IEnumerator Damage()
     {
         yield return new WaitForSeconds(1f);
-        HeroManager.BeHit();
+        HeroManager._instant.BeHit();
     }
 
     private Vector3 Radius_Position()

@@ -4,11 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class HeroManager : MonoBehaviour {
+
+    public static HeroManager _instant;
     public Image Herohp;
     bool GameOver = false;
-    public static int HP = 10;
+    public int HP = 10;
 	// Use this for initialization
 	void Start () {
+        _instant = this;
         GameOver = false;
         HP = 10;
 	}
@@ -25,7 +28,7 @@ public class HeroManager : MonoBehaviour {
            
 	}
 
-    public static void BeHit()
+    public void BeHit()
     {
         HP = HP - 1;
         Debug.Log("HP:" + HP);
