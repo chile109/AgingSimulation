@@ -107,6 +107,8 @@ public class BossController : MonoBehaviour
         _Ani.SetTrigger("BeDead");
         Die = true;
         Debug.Log("Boss is dead!");
+
+        GameManager._instant.Game_Over();
     }
 
     private void Damage()

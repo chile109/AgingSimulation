@@ -1,9 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
 
+    public static GameManager _instant;
     public BossController _boss;
     public HeroManager _hero;
     public DiologPlayer _owl;
@@ -11,10 +12,17 @@ public class GameManager : MonoBehaviour {
     float ftime = 0;
     int play_time = 0;
 
+    private void Awake()
+    {
+        _instant = this;
+    }
     private void Start()
     {
         ftime = 0;
         play_time = 0;
+
+        SteamVR_Fade.Start(Color.black, 0f);
+        Invoke("FadeFromBlack", 3f);
     }
 
     private void Update()
@@ -28,7 +36,7 @@ public class GameManager : MonoBehaviour {
 
     void T_ScoreCaculate()
     {
-        if(play_time < 60)
+        if (play_time < 60)
         {
             Debug.Log("T_Grade:S");
         }
@@ -48,7 +56,7 @@ public class GameManager : MonoBehaviour {
             Debug.Log("T_Grade:C");
         }
 
-        if (play_time >= 90 )
+        if (play_time >= 90)
         {
             Debug.Log("T_Grade:D");
         }
@@ -80,5 +88,36 @@ public class GameManager : MonoBehaviour {
         {
             Debug.Log("H_Grade:D");
         }
+    }
+
+    public void Game_Over()
+    {
+        Invoke("FadeToBlack", 3f);
+        //scene pass
+        Invoke("FadeFromBlack", 6f);
+    }
+    private void FadeToBlack()
+    {
+        SteamVR_Fade.Start(Color.black, 3f);
+    }
+
+    private void FadeToWhite()
+    {
+        SteamVR_Fade.Start(Color.white, 3f);
+    }
+
+    private void FadeFromBlack()
+    {
+        //set start color
+        SteamVR_Fade.Start(Color.black, 0f);
+        //set and start fade to
+        SteamVR_Fade.Start(Color.clear, 3f);
+    }
+    private void FadeFromWhite()
+    {
+        //set start color
+        SteamVR_Fade.Start(Color.white, 0f);
+        //set and start fade to
+        SteamVR_Fade.Start(Color.clear, 3f);
     }
 }
