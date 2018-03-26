@@ -10,7 +10,7 @@ public class BossController : MonoBehaviour
     public int Hp;
     public bool Die = false;
     public BossState NowState;
-    public SkinnedMeshRenderer render;
+    public GameObject render;
     public Transform _Hero;
 
     private IEnumerator NowCoroutine;
@@ -74,8 +74,6 @@ public class BossController : MonoBehaviour
         NowState = BossState.Attack;
         _Ani.SetTrigger("BeAttack");
 
-        StartCoroutine(Damage());
-
         if (HeroManager._instant.HP == 0)
         {
             StopAllCoroutines();
@@ -92,14 +90,14 @@ public class BossController : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         NowState = BossState.Idle;
         _Ani.SetTrigger("BeIdle");
-        render.enabled = false;
+        render.SetActive(false);
 
         yield return new WaitForSeconds(1f);
 
         gameObject.transform.position = Radius_Position();
         gameObject.transform.LookAt(new Vector3(_Hero.position.x, 0, _Hero.position.z));
         transform.Rotate(Vector3.up, -5f, Space.World);
-        render.enabled = true;
+        render.SetActive(true);
         NowCoroutine = BeAngry(5f);
         StartCoroutine(NowCoroutine);
     }
@@ -111,9 +109,8 @@ public class BossController : MonoBehaviour
         Debug.Log("Boss is dead!");
     }
 
-    private IEnumerator Damage()
+    private void Damage()
     {
-        yield return new WaitForSeconds(1f);
         HeroManager._instant.BeHit();
     }
 
