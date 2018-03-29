@@ -9,15 +9,17 @@ public class GameManager : MonoBehaviour
     public HeroManager _hero;
     public DiologPlayer _owl;
 
-    float ftime = 0;
-    int play_time = 0;
+    public int life = 3;
+    public float ftime = 0;
+    public int play_time = 0;
 
-    private void Awake()
-    {
-        _instant = this;
-    }
     private void Start()
     {
+
+        DontDestroyOnLoad(this.gameObject);
+        _instant = this;
+
+
         ftime = 0;
         play_time = 0;
 
@@ -34,67 +36,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void T_ScoreCaculate()
+    void OnGUI()
     {
-        if (play_time < 60)
-        {
-            Debug.Log("T_Grade:S");
-        }
-
-        if (play_time >= 60 && play_time < 70)
-        {
-            Debug.Log("T_Grade:A");
-        }
-
-        if (play_time >= 70 && play_time < 80)
-        {
-            Debug.Log("T_Grade:B");
-        }
-
-        if (play_time >= 80 && play_time < 90)
-        {
-            Debug.Log("T_Grade:C");
-        }
-
-        if (play_time >= 90)
-        {
-            Debug.Log("T_Grade:D");
-        }
-    }
-
-    void H_ScoreCaculate()
-    {
-        if (_hero.HP == 10)
-        {
-            Debug.Log("H_Grade:S");
-        }
-
-        if (play_time >= 8 && play_time < 10)
-        {
-            Debug.Log("H_Grade:A");
-        }
-
-        if (play_time >= 6 && play_time < 8)
-        {
-            Debug.Log("H_Grade:B");
-        }
-
-        if (play_time >= 4 && play_time < 6)
-        {
-            Debug.Log("H_Grade:C");
-        }
-
-        if (play_time < 4)
-        {
-            Debug.Log("H_Grade:D");
-        }
+        GUI.Label(new Rect(10, 10, 100, 20), play_time.ToString());
     }
 
     public void Game_Over()
     {
         Invoke("FadeToBlack", 3f);
-        //scene pass
-        SceneManager.LoadSceneAsync("");
+        SceneManager.LoadSceneAsync("Result");
     }
     private void FadeToBlack()
     {
