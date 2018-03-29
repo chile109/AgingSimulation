@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
     {
         Invoke("FadeToBlack", 3f);
         //scene pass
-        Invoke("FadeFromBlack", 6f);
+        SceneManager.LoadSceneAsync("");
     }
     private void FadeToBlack()
     {
