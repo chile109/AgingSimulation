@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HeroManager : MonoBehaviour {
 
     public static HeroManager _instant;
-    public Image Herohp;
+    public Text Herohp;
     bool GameOver = false;
     public int HP = 10;
 	// Use this for initialization
@@ -19,11 +19,11 @@ public class HeroManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        Herohp.fillAmount = (float) HP/10 ;
+        Herohp.text = (HP*10).ToString();
 
 		if(HP == 0 && !GameOver) {
             GameOver = true;
-            Debug.Log("GameOver!!");
+            GameManager._instant.Game_Over();
         }
            
 	}
