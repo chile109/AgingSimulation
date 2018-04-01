@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class BoardManager : MonoBehaviour {
 
-    public GameObject _board;
     public Image[] _star;
     public Sprite[] _evaluation;
     public Image _log;
@@ -22,8 +21,6 @@ public class BoardManager : MonoBehaviour {
         starCount = T_ScoreCaculate() + H_ScoreCaculate();
         StarShowed = false;
         ShowScore();
-        _board.SetActive(true);
-
 	}
 	
 	// Update is called once per frame

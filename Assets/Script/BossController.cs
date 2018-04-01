@@ -93,7 +93,7 @@ public class BossController : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         gameObject.transform.position = Radius_Position();
-        gameObject.transform.LookAt(new Vector3(_Hero.position.x, 0, _Hero.position.z));
+        gameObject.transform.LookAt(new Vector3(HeroManager._instant.transform.position.x, 0, HeroManager._instant.transform.position.z));
         transform.Rotate(Vector3.up, -5f, Space.World);
         render.SetActive(true);
         NowCoroutine = BeAngry(5f);

@@ -32,7 +32,7 @@ public class ResultManager : MonoBehaviour
                     Destroy(GameManager._instant.gameObject);
                     Destroy(HeroManager._instant.gameObject);
                     _board.SceneToGo = "Story";
-                    _board.enabled = true;
+                    _board.gameObject.SetActive(true);
                 }
             }
         }
@@ -48,7 +48,7 @@ public class ResultManager : MonoBehaviour
                 else
                 {
                     _board.SceneToGo = "Game";
-                    _board.enabled = true;
+                    _board.gameObject.SetActive(true);
                 }
             }
         }
