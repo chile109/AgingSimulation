@@ -1,10 +1,8 @@
-﻿using UnityEngine.SceneManagement;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ResultManager : MonoBehaviour
 {
-
-    public SteamVR_TrackedObject trackedObj;
+    public BoardManager _board;
     public Texture[] WinTexure;
     public Texture[] FailTexure;
     public Renderer _render;
@@ -17,9 +15,9 @@ public class ResultManager : MonoBehaviour
 
     private void Update()
     {
-        var device = SteamVR_Controller.Input((int)trackedObj.index);
+        var device = SteamVR_Controller.Input((int)HeroManager._instant.trackedObj.index);
 
-        if (GameManager._instant._boss.Die)
+        if (GameManager._instant.GameOver)
         {
             if (device.GetTouchUp(SteamVR_Controller.ButtonMask.Trigger))
             {
@@ -30,10 +28,11 @@ public class ResultManager : MonoBehaviour
                 }
                 else
                 {
-                    T_ScoreCaculate();
-                    H_ScoreCaculate();
-                    _render.material.mainTexture = null;
-                    SceneManager.LoadSceneAsync("Game");
+                    GameManager._instant.life = 3;
+                    Destroy(GameManager._instant.gameObject);
+                    Destroy(HeroManager._instant.gameObject);
+                    _board.SceneToGo = "Story";
+                    _board.enabled = true;
                 }
             }
         }
@@ -48,68 +47,10 @@ public class ResultManager : MonoBehaviour
                 }
                 else
                 {
-                    T_ScoreCaculate();
-                    H_ScoreCaculate();
-                    _render.material.mainTexture = null;
-                    SceneManager.LoadSceneAsync("Game");
+                    _board.SceneToGo = "Game";
+                    _board.enabled = true;
                 }
             }
-        }
-    }
-
-    void T_ScoreCaculate()
-    {
-        if (GameManager._instant.play_time < 60)
-        {
-            Debug.Log("T_Grade:S");
-        }
-
-        if (GameManager._instant.play_time >= 60 && GameManager._instant.play_time < 70)
-        {
-            Debug.Log("T_Grade:A");
-        }
-
-        if (GameManager._instant.play_time >= 70 && GameManager._instant.play_time < 80)
-        {
-            Debug.Log("T_Grade:B");
-        }
-
-        if (GameManager._instant.play_time >= 80 && GameManager._instant.play_time < 90)
-        {
-            Debug.Log("T_Grade:C");
-        }
-
-        if (GameManager._instant.play_time >= 90)
-        {
-            Debug.Log("T_Grade:D");
-        }
-    }
-
-    void H_ScoreCaculate()
-    {
-        if (GameManager._instant._hero.HP == 10)
-        {
-            Debug.Log("H_Grade:S");
-        }
-
-        if (GameManager._instant._hero.HP >= 8 && GameManager._instant._hero.HP < 10)
-        {
-            Debug.Log("H_Grade:A");
-        }
-
-        if (GameManager._instant._hero.HP >= 6 && GameManager._instant._hero.HP < 8)
-        {
-            Debug.Log("H_Grade:B");
-        }
-
-        if (GameManager._instant._hero.HP >= 4 && GameManager._instant._hero.HP < 6)
-        {
-            Debug.Log("H_Grade:C");
-        }
-
-        if (GameManager._instant._hero.HP < 4)
-        {
-            Debug.Log("H_Grade:D");
         }
     }
 }

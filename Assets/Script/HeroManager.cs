@@ -32,7 +32,7 @@ public class HeroManager : MonoBehaviour {
 
 		if(HP == 0 && !GameOver) {
             GameOver = true;
-            GameManager._instant.Game_Over();
+            StartCoroutine(GameManager._instant.Game_Over());
         }
            
 	}

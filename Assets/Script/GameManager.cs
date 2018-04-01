@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
+using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
 
     public static GameManager _instant;
-    public BossController _boss;
-    public DiologPlayer _owl;
 
+    public bool GameOver = false;
     public int life = 3;
     public float ftime = 0;
     public int play_time = 0;
@@ -24,16 +24,21 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
         }
 
+        InitGame();
+    }
+
+    public void InitGame()
+    {
         ftime = 0;
         play_time = 0;
-
+        GameOver = false;
         SteamVR_Fade.Start(Color.black, 0f);
         Invoke("FadeFromBlack", 3f);
     }
 
     private void Update()
     {
-        if (!_boss.Die && _owl.Over)
+        if (!GameOver)
         {
             ftime += Time.deltaTime;
             play_time = (int)ftime;
@@ -45,10 +50,14 @@ public class GameManager : MonoBehaviour
         GUI.Label(new Rect(10, 10, 100, 20), play_time.ToString());
     }
 
-    public void Game_Over()
+    public IEnumerator Game_Over()
     {
-        Invoke("FadeToBlack", 3f);
+        yield return new WaitForSeconds(5f);
+        Invoke("FadeToBlack", 0f);
+        yield return new WaitForSeconds(3f);
         SceneManager.LoadSceneAsync("Result");
+        yield return new WaitForSeconds(3f);
+        Invoke("FadeFromBlack", 0f);
     }
     private void FadeToBlack()
     {

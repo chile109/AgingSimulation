@@ -8,10 +8,8 @@ public class BossController : MonoBehaviour
     Animator _Ani;
     public Image Hpbar;
     public int Hp;
-    public bool Die = false;
     public BossState NowState;
     public GameObject render;
-    public Transform _Hero;
 
     private IEnumerator NowCoroutine;
 
@@ -25,12 +23,12 @@ public class BossController : MonoBehaviour
 
     public void StartFight()
     {
-        NowCoroutine = BeAngry(5f);
+        NowCoroutine = BeAngry(3f);
         StartCoroutine(NowCoroutine);
         Debug.Log("SatrtFight");
 
         gameObject.transform.position = Radius_Position();
-        gameObject.transform.LookAt(new Vector3(_Hero.position.x, 0, _Hero.position.z));
+        gameObject.transform.LookAt(new Vector3(HeroManager._instant.transform.position.x, 0, HeroManager._instant.transform.position.z));
         transform.Rotate(Vector3.up, -10f, Space.World);
     }
 
@@ -64,7 +62,7 @@ public class BossController : MonoBehaviour
         NowState = BossState.Angry;
         _Ani.SetTrigger("BeAngry");
 
-        NowCoroutine = Attack(5f);
+        NowCoroutine = Attack(3f);
         StartCoroutine(NowCoroutine);
     }
 
@@ -105,10 +103,7 @@ public class BossController : MonoBehaviour
     private void IsDead()
     {
         _Ani.SetTrigger("BeDead");
-        Die = true;
-        Debug.Log("Boss is dead!");
-
-        GameManager._instant.Game_Over();
+        StartCoroutine(GameManager._instant.Game_Over());
     }
 
     private void Damage()
