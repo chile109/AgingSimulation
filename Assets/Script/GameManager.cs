@@ -6,7 +6,6 @@ public class GameManager : MonoBehaviour
 
     public static GameManager _instant;
     public BossController _boss;
-    public HeroManager _hero;
     public DiologPlayer _owl;
 
     public int life = 3;
@@ -15,10 +14,15 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-
-        DontDestroyOnLoad(this.gameObject);
-        _instant = this;
-
+        if (_instant == null)
+        {
+            DontDestroyOnLoad(this.gameObject);
+            _instant = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
 
         ftime = 0;
         play_time = 0;
@@ -29,7 +33,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (!_boss.Die)
+        if (!_boss.Die && _owl.Over)
         {
             ftime += Time.deltaTime;
             play_time = (int)ftime;

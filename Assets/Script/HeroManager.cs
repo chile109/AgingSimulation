@@ -6,12 +6,21 @@ using UnityEngine.UI;
 public class HeroManager : MonoBehaviour {
 
     public static HeroManager _instant;
+    public SteamVR_TrackedObject trackedObj;
     public Text Herohp;
     bool GameOver = false;
     public int HP = 10;
 	// Use this for initialization
 	void Start () {
-        _instant = this;
+        if (_instant == null)
+        {
+            DontDestroyOnLoad(this.gameObject);
+            _instant = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
         GameOver = false;
         HP = 10;
 	}
