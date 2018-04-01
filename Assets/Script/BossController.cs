@@ -17,7 +17,7 @@ public class BossController : MonoBehaviour
     void Start()
     {
         _Ani = this.GetComponent<Animator>();
-        Hp = 100;
+        Hp = 10;
         NowState = BossState.Idle;
     }
 
@@ -36,7 +36,7 @@ public class BossController : MonoBehaviour
     {
         if (other.tag == "Weapon" && NowState == BossState.Angry)
         {
-            StopAllCoroutines();
+            StopCoroutine(NowCoroutine);
             Hp -= 10;
             Hpbar.fillAmount = (float)Hp / 100;
             Debug.Log("HP:" + Hp);
@@ -44,15 +44,9 @@ public class BossController : MonoBehaviour
             NowState = BossState.Injured;
             _Ani.SetTrigger("BeInjured");
 
-            StopAllCoroutines();
+            if (Hp == 0)
+                BeDead();
 
-            if (Hp > 0)
-            {
-                NowCoroutine = BeIdle(2f);
-                StartCoroutine(NowCoroutine);
-            }
-            else
-                IsDead();
         }
     }
 
@@ -75,35 +69,33 @@ public class BossController : MonoBehaviour
         if (HeroManager._instant.HP == 0)
         {
             StopAllCoroutines();
-            NowCoroutine = BeIdle(0f);
         }
-        else
-            NowCoroutine = BeIdle(1f);
-
-        StartCoroutine(NowCoroutine);
     }
 
-    private IEnumerator BeIdle(float waitTime)
+    private void BeIdle()
     {
-        yield return new WaitForSeconds(waitTime);
+        Debug.Log("beIdle");
         NowState = BossState.Idle;
         _Ani.SetTrigger("BeIdle");
         render.SetActive(false);
+        StartCoroutine(ShowUp());
+    }
 
-        yield return new WaitForSeconds(1f);
-
+    public IEnumerator ShowUp()
+    {
         gameObject.transform.position = Radius_Position();
         gameObject.transform.LookAt(new Vector3(HeroManager._instant.transform.position.x, 0, HeroManager._instant.transform.position.z));
         transform.Rotate(Vector3.up, -5f, Space.World);
+        yield return new WaitForSeconds(2f);
         render.SetActive(true);
-        NowCoroutine = BeAngry(5f);
+        NowCoroutine = BeAngry(3f);
         StartCoroutine(NowCoroutine);
     }
 
-    private void IsDead()
+    private void BeDead()
     {
         _Ani.SetTrigger("BeDead");
-        StartCoroutine(GameManager._instant.Game_Over());
+        GameManager._instant.WinGame();
     }
 
     private void Damage()

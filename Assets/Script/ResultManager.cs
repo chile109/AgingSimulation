@@ -6,50 +6,46 @@ public class ResultManager : MonoBehaviour
     public Texture[] WinTexure;
     public Texture[] FailTexure;
     public Renderer _render;
+
     private int id;
+    private Texture[] _tmpTexture;
 
     private void Start()
     {
         id = 0;
+
+        if (!GameManager._instant.GameOver)
+        {
+            _tmpTexture = WinTexure;
+            _board.SceneToGo = "Story";
+        }
+        else
+        {
+            _tmpTexture = FailTexure;
+            _board.SceneToGo = "Game";
+        }
+
+        _render.material.mainTexture = _tmpTexture[0];
     }
 
     private void Update()
     {
         var device = SteamVR_Controller.Input((int)HeroManager._instant.trackedObj.index);
 
-        if (GameManager._instant.GameOver)
+        if (device.GetTouchUp(SteamVR_Controller.ButtonMask.Trigger))
         {
-            if (device.GetTouchUp(SteamVR_Controller.ButtonMask.Trigger))
+            if (id < _tmpTexture.Length - 1)
             {
-                if (id < WinTexure.Length - 1)
-                {
-                    id += 1;
-                    _render.material.mainTexture = WinTexure[id];
-                }
-                else
-                {
-                    GameManager._instant.life = 3;
-                    Destroy(GameManager._instant.gameObject);
-                    Destroy(HeroManager._instant.gameObject);
-                    _board.SceneToGo = "Story";
-                    _board.gameObject.SetActive(true);
-                }
+                id += 1;
+                _render.material.mainTexture = _tmpTexture[id];
             }
-        }
-        else
-        {
-            if (device.GetTouchUp(SteamVR_Controller.ButtonMask.Trigger))
+            else
             {
-                if (id < FailTexure.Length - 1)
+                if (!GameManager._instant.GameOver)
                 {
-                    id += 1;
-                    _render.material.mainTexture = FailTexure[id];
+                    _render.material.mainTexture = null;
                 }
-                else
-                {
-                    _board.SceneToGo = "Game";
-                    _board.gameObject.SetActive(true);
-                }
+                _board.gameObject.SetActive(true);
             }
         }
     }

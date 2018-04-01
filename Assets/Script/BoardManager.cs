@@ -33,6 +33,7 @@ public class BoardManager : MonoBehaviour {
 
             if (clickOrder == 1)
             {
+                _log.enabled = true;
                 _log.sprite = _evaluation[starCount];
             }
 

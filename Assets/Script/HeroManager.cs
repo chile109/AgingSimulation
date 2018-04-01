@@ -8,7 +8,6 @@ public class HeroManager : MonoBehaviour {
     public static HeroManager _instant;
     public SteamVR_TrackedObject trackedObj;
     public Text Herohp;
-    bool GameOver = false;
     public int HP = 10;
 	// Use this for initialization
 	void Start () {
@@ -21,17 +20,22 @@ public class HeroManager : MonoBehaviour {
         {
             Destroy(this.gameObject);
         }
-        GameOver = false;
-        HP = 10;
+
+        Hero_init();
 	}
+
+    public void Hero_init()
+    {
+        HP = 1;
+    }
 	
 	// Update is called once per frame
 	void Update () {
 
         Herohp.text = (HP*10).ToString();
 
-		if(HP == 0 && !GameOver) {
-            GameOver = true;
+		if(HP == 0 && !GameManager._instant.GameOver) {
+            GameManager._instant.GameOver = true;
             StartCoroutine(GameManager._instant.Game_Over());
         }
            

@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     {
         ftime = 0;
         play_time = 0;
+        HeroManager._instant.Hero_init();
         GameOver = false;
         SteamVR_Fade.Start(Color.black, 0f);
         Invoke("FadeFromBlack", 3f);
@@ -49,6 +50,11 @@ public class GameManager : MonoBehaviour
     {
         GUI.Label(new Rect(10, 10, 100, 20), play_time.ToString());
     }
+
+    public void WinGame()
+    {
+        StartCoroutine(Game_Over());
+    } 
 
     public IEnumerator Game_Over()
     {
