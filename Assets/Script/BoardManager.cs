@@ -3,7 +3,8 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BoardManager : MonoBehaviour {
+public class BoardManager : MonoBehaviour
+{
 
     public Image[] _star;
     public Sprite[] _evaluation;
@@ -16,16 +17,18 @@ public class BoardManager : MonoBehaviour {
     private bool StarShowed = false;
     private int starCount = 0;
 
-    void Start () {
+    void Start()
+    {
         clickOrder = 0;
         starCount = T_ScoreCaculate() + H_ScoreCaculate();
+        _log.sprite = null;
         StarShowed = false;
         ShowScore();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        _log.sprite = null;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         var device = SteamVR_Controller.Input((int)HeroManager._instant.trackedObj.index);
         if (device.GetTouchDown(SteamVR_Controller.ButtonMask.Trigger))
         {
@@ -45,7 +48,11 @@ public class BoardManager : MonoBehaviour {
 
             else if (clickOrder == 3)
             {
-                GameManager._instant.InitGame();
+                if (SceneToGo == "Game")
+                    GameManager._instant.InitGame();
+                else
+                    GameManager._instant.FadeToWhite();
+
                 SceneManager.LoadSceneAsync(SceneToGo);
             }
         }

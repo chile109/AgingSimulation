@@ -1,70 +1,38 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEngine.SceneManagement;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.Video;
+using System.Collections;
 
-[RequireComponent(typeof(Image))]
-[RequireComponent(typeof(Text))]
 public class StoryPlayer : MonoBehaviour
 {
-    public Text _Lang;
-
-    public Object[] pages;
-    private Image _player;
-    private int id;
-
-    public SteamVR_TrackedObject trackedObj;
-    public GameObject HeroCamera;
-    public GameObject HeroUI;
-
-    public DiologPlayer Owl;
-
-    private void Awake()
+    public VideoPlayer _player;
+    private void Start()
     {
-        Owl.enabled = false;
-        HeroCamera.SetActive(false);
-        pages = Resources.LoadAll("StoryBoard/Third/Sequence", typeof(Sprite));
-        StoryInit();
+        GameManager._instant.FadeFromWhite();
+        _player.loopPointReached += PlayGame;
+
     }
-
-    public void GetStory(string Name)
+    private void Update()
     {
-        pages = Resources.LoadAll(Name, typeof(Sprite));
-        StoryInit();
-    }
+        var device = SteamVR_Controller.Input((int)HeroManager._instant.trackedObj.index);
 
-    void StoryInit()
-    {
-        HeroUI.SetActive(false);
-        _player = this.GetComponent<Image>();
-        id = 0;
-        _player.sprite = (Sprite)pages[id];
-        _Lang.text = KernelData.Sequence3[id];
-    }
-
-    void Update()
-    {
-
-        var device = SteamVR_Controller.Input((int)trackedObj.index);
         if (device.GetTouchUp(SteamVR_Controller.ButtonMask.Trigger))
         {
-            if (id < pages.Length - 1)
-            {
-                id += 1;
-                _player.sprite = (Sprite)pages[id];
-                _Lang.text = KernelData.Sequence3[id];
-            }
-
-            else
-            {
-                _Lang.text = "End";
-                HeroUI.SetActive(true);
-                HeroCamera.SetActive(true);
-                this.gameObject.SetActive(false);
-                Owl.enabled = true;
-            }
+            _player.Play();
         }
     }
 
+    private void PlayGame(UnityEngine.Video.VideoPlayer vp)
+    {
+        GameManager._instant.FadeToBlack();
+        StartCoroutine(JumpScene());
+    }
+
+    IEnumerator JumpScene()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadSceneAsync("Game");
+        GameManager._instant.InitGame();
+    }
 
 }

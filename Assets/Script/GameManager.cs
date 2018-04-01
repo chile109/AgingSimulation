@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public float ftime = 0;
     public int play_time = 0;
 
-    private void Start()
+    private void Awake()
     {
         if (_instant == null)
         {
@@ -23,8 +23,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-
-        InitGame();
     }
 
     public void InitGame()
@@ -65,12 +63,12 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(3f);
         Invoke("FadeFromBlack", 0f);
     }
-    private void FadeToBlack()
+    public void FadeToBlack()
     {
         SteamVR_Fade.Start(Color.black, 3f);
     }
 
-    private void FadeToWhite()
+    public void FadeToWhite()
     {
         SteamVR_Fade.Start(Color.white, 3f);
     }
@@ -82,7 +80,7 @@ public class GameManager : MonoBehaviour
         //set and start fade to
         SteamVR_Fade.Start(Color.clear, 3f);
     }
-    private void FadeFromWhite()
+    public void FadeFromWhite()
     {
         //set start color
         SteamVR_Fade.Start(Color.white, 0f);

@@ -17,7 +17,7 @@ public class BossController : MonoBehaviour
     void Start()
     {
         _Ani = this.GetComponent<Animator>();
-        Hp = 10;
+        Hp = 100;
         NowState = BossState.Idle;
     }
 
