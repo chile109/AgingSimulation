@@ -34,6 +34,11 @@ public class GameManager : MonoBehaviour
         SteamVR_Fade.Start(Color.black, 0f);
         Invoke("FadeFromBlack", 3f);
     }
+    public void GameReset()
+    {
+        life = 3;
+        InitGame();
+    }
 
     private void Update()
     {

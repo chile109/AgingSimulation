@@ -26,7 +26,7 @@ public class HeroManager : MonoBehaviour {
 
     public void Hero_init()
     {
-        HP = 2;
+        HP = 10;
     }
 	
 	// Update is called once per frame
@@ -35,6 +35,7 @@ public class HeroManager : MonoBehaviour {
         Herohp.text = (HP*10).ToString();
 
 		if(HP == 0 && !GameManager._instant.GameOver) {
+            GameManager._instant.life -= 1;
             GameManager._instant.GameOver = true;
             StartCoroutine(GameManager._instant.Game_Over());
         }
