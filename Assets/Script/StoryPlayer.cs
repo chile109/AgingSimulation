@@ -6,6 +6,7 @@ using System.Collections;
 public class StoryPlayer : MonoBehaviour
 {
     public VideoPlayer _player;
+    public GameObject _Tip;
     private void Start()
     {
         GameManager._instant.FadeFromWhite();
@@ -18,18 +19,21 @@ public class StoryPlayer : MonoBehaviour
 
         if (device.GetTouchUp(SteamVR_Controller.ButtonMask.Trigger))
         {
+            _Tip.SetActive(false);
             _player.Play();
         }
     }
 
     private void PlayGame(UnityEngine.Video.VideoPlayer vp)
     {
+        _player.Stop();
         GameManager._instant.FadeToBlack();
         StartCoroutine(JumpScene());
     }
 
     IEnumerator JumpScene()
     {
+        Debug.Log("corotine");
         yield return new WaitForSeconds(2f);
         SceneManager.LoadSceneAsync("Game");
         GameManager._instant.InitGame();

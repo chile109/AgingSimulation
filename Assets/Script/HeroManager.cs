@@ -26,7 +26,7 @@ public class HeroManager : MonoBehaviour {
 
     public void Hero_init()
     {
-        HP = 10;
+        HP = 2;
     }
 	
 	// Update is called once per frame

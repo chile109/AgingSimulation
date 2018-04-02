@@ -14,7 +14,7 @@ public class BoardManager : MonoBehaviour
 
     public string SceneToGo = "";
     private int clickOrder = 0;
-    private bool StarShowed = false;
+    private bool AvoidTwice = false;
     private int starCount = 0;
 
     void Start()
@@ -22,7 +22,7 @@ public class BoardManager : MonoBehaviour
         clickOrder = 0;
         starCount = T_ScoreCaculate() + H_ScoreCaculate();
         _log.sprite = null;
-        StarShowed = false;
+        AvoidTwice = false;
         ShowScore();
     }
 
@@ -34,16 +34,17 @@ public class BoardManager : MonoBehaviour
         {
             clickOrder += 1;
 
-            if (clickOrder == 1)
+            if (clickOrder == 1 && !AvoidTwice)
+            {
+                AvoidTwice = true;
+                StartCoroutine(ShowStar());
+                
+            }
+
+            else if (clickOrder == 2 && !AvoidTwice)
             {
                 _log.enabled = true;
                 _log.sprite = _evaluation[starCount];
-            }
-
-            else if (clickOrder == 2 && !StarShowed)
-            {
-                StartCoroutine(ShowStar());
-                StarShowed = true;
             }
 
             else if (clickOrder == 3)
@@ -74,6 +75,8 @@ public class BoardManager : MonoBehaviour
             yield return new WaitForSeconds(1f);
             _star[i].enabled = true;
         }
+
+        AvoidTwice = false;
     }
 
     int T_ScoreCaculate()
