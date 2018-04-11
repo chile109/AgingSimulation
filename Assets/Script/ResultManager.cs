@@ -16,13 +16,11 @@ public class ResultManager : MonoBehaviour
 
         if (!GameManager._instant.GameOver)
         {
-            GameManager._instant.GameReset();
             _tmpTexture = WinTexure;
             _board.SceneToGo = "Story";
         }
         else if (GameManager._instant.life == 0)
         {
-            GameManager._instant.GameReset();
             _tmpTexture = FailTexure;
             _board.SceneToGo = "Story";
         }

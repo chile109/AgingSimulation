@@ -27,10 +27,10 @@ public class GameManager : MonoBehaviour
 
     public void InitGame()
     {
-        ftime = 0;
-        play_time = 0;
         HeroManager._instant.Hero_init();
         GameOver = false;
+        ftime = 0;
+        play_time = 0;
         SteamVR_Fade.Start(Color.black, 0f);
         Invoke("FadeFromBlack", 3f);
     }
@@ -92,4 +92,13 @@ public class GameManager : MonoBehaviour
         //set and start fade to
         SteamVR_Fade.Start(Color.clear, 3f);
     }
+
+    public void FadeFromRed()
+    {
+        //set start color
+        SteamVR_Fade.Start(Color.red, 0f);
+        SteamVR_Fade.Start(Color.clear, 0.5f);
+    }
 }
+
+

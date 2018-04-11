@@ -45,6 +45,7 @@ public class HeroManager : MonoBehaviour {
     public void BeHit()
     {
         HP = HP - 1;
+        GameManager._instant.FadeFromRed();
         Debug.Log("HP:" + HP);
     }
 }
