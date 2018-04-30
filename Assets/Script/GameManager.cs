@@ -42,7 +42,8 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (!GameOver)
+
+        if (!GameOver && SceneManager.GetActiveScene().name == "Game")
         {
             ftime += Time.deltaTime;
             play_time = (int)ftime;

@@ -35,8 +35,10 @@ public class BoardManager : MonoBehaviour
         var device = SteamVR_Controller.Input((int)HeroManager._instant.trackedObj.index);
         if (device.GetTouchDown(SteamVR_Controller.ButtonMask.Trigger))
         {
-            clickOrder += 1;
-
+            if(!AvoidTwice)
+            {
+                clickOrder += 1;
+            }
             if (clickOrder == 1 && !AvoidTwice)
             {
                 AvoidTwice = true;
@@ -130,6 +132,11 @@ public class BoardManager : MonoBehaviour
     int T_ScoreCaculate()
     {
         int time_star = 0;
+
+        if (HeroManager._instant.HP == 0)
+        {
+            return 0;
+        }
         if (GameManager._instant.play_time < 120)
         {
             time_star = 2;

@@ -33,6 +33,7 @@ public class DiologPlayer : MonoBehaviour {
                 Over = true;
                 this.gameObject.SetActive(false);
                 _boss.StartFight();
+                GameManager._instant.InitGame();
             }
         }
     }
