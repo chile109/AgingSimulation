@@ -17,7 +17,7 @@ public class StoryPlayer : MonoBehaviour
     {
         var device = SteamVR_Controller.Input((int)HeroManager._instant.trackedObj.index);
 
-        if (device.GetTouchUp(SteamVR_Controller.ButtonMask.Trigger))
+        if (device.GetTouchUp(SteamVR_Controller.ButtonMask.Trigger) || Input.GetKeyDown(KeyCode.Space))
         {
             _Tip.SetActive(false);
             _player.Play();

@@ -14,7 +14,6 @@ public class DiologPlayer : MonoBehaviour {
     void Start () {
         id = 0;
         Over = false;
-        Owlsaying.text = Dialog[id];
     }
 	
 	// Update is called once per frame

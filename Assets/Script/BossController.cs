@@ -19,6 +19,7 @@ public class BossController : MonoBehaviour
         _Ani = this.GetComponent<Animator>();
         Hp = 100;
         NowState = BossState.Idle;
+        
     }
 
     public void StartFight()
@@ -43,7 +44,7 @@ public class BossController : MonoBehaviour
 
             NowState = BossState.Injured;
             _Ani.SetTrigger("BeInjured");
-
+            AudioManager.SFX_ES.Trigger("Attack");
             if (Hp == 0)
                 BeDead();
 
@@ -55,7 +56,7 @@ public class BossController : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         NowState = BossState.Angry;
         _Ani.SetTrigger("BeAngry");
-
+        AudioManager.SFX_ES.Trigger("Bark");
         NowCoroutine = Attack(3f);
         StartCoroutine(NowCoroutine);
     }
@@ -65,7 +66,7 @@ public class BossController : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         NowState = BossState.Attack;
         _Ani.SetTrigger("BeAttack");
-
+        AudioManager.SFX_ES.Trigger("Injure");
         if (HeroManager._instant.HP == 0)
         {
             StopAllCoroutines();
